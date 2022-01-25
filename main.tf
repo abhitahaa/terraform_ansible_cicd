@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-east-2"
 }
 
 variable "vpc_cidr_block" {}
@@ -25,7 +25,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "public_subnet" {
   cidr_block        = var.subnet_cidr_block
   vpc_id            = aws_vpc.main.id
-  availability_zone = "us-east-1a"
+  availability_zone = "us-east-2a"
 }
 
 
