@@ -9,11 +9,11 @@ pipeline {
         stage('input'){
             steps{
                 script {
-                 $action = input message: 'Please enter Terraform action',
+                 action = input message: 'Please enter Terraform action',
                              parameters: [string(defaultValue: '',
                                           description: 'This is Terraform Action',
-                                          name: 'action')]
-             echo "Terraform action: $name"
+                                          name: 'Action')]
+             echo "Terraform action: $action"
                 }
             }
         }
