@@ -6,7 +6,7 @@ pipeline {
     }
 
          parameters {
-                    string(name: 'action', defaultValue: '', description: 'Terraform action')
+             choice(name: 'action', choices: ['apply', 'destroy'], description: 'Pick something')
         }
 
     stages {
