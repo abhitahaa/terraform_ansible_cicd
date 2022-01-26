@@ -13,7 +13,7 @@ pipeline {
                              parameters: [string(defaultValue: '',
                                           description: 'This is Terraform Action',
                                           name: 'action')]
-             echo "Terraform action: $action"
+             echo "Terraform action: $name"
                 }
             }
         }
