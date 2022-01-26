@@ -5,14 +5,10 @@ pipeline {
         terraform 'terraform'
     }
 
-    input{
-        message : 'Terraform Action'
-        ok : 'Proceed'
-        parameters {
+         parameters {
                     string(name: 'action', defaultValue: '', description: 'Terraform action')
         }
 
-    }
     stages {
         //stage('input'){
           //  steps{
