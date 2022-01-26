@@ -176,6 +176,7 @@ resource "aws_security_group" "nexusrepo_sg" {
   }
 }
 
+/*
 #allowing jenkins security group in nexus security group. here source is jenkins and destination is nexus security group.
 resource "aws_security_group_rule" "allow_jenkins_test_sg" {
 
