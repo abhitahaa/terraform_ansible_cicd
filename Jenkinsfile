@@ -34,7 +34,7 @@ pipeline {
         }
         stage('Terraform Action') {
             steps {
-                sh label: '', script: 'terraform $action --auto-approve'
+                sh label: '', script: 'terraform ${action} --auto-approve'
             }
         }
         //stage('Terraform Destroy') {
