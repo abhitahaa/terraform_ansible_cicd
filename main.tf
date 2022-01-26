@@ -11,7 +11,7 @@ resource "aws_vpc" "main" {
   cidr_block = var.vpc_cidr_block
 
   tags = {
-    Name : "mainvpc"
+    Name : "testmainvpc"
   }
 }
 
@@ -21,5 +21,10 @@ resource "aws_subnet" "public_subnet" {
   cidr_block        = var.subnet_cidr_block
   vpc_id            = aws_vpc.main.id
   availability_zone = "us-east-2a"
+  
+  tags = {
+    Name : "testsubnet"
+  }
+  
 }
 
