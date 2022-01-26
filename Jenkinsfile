@@ -1,22 +1,31 @@
 
-def action
 pipeline {
     agent any
     tools {
         terraform 'terraform'
     }
-    stages {
-        stage('input'){
-            steps{
-                script {
-                 action = input message: 'Please enter Terraform action',
-                             parameters: [string(defaultValue: '',
-                                          description: 'This is Terraform Action',
-                                          name: 'Action')]
-             echo "Terraform action: $action"
-                }
-            }
+
+    input{
+        message : 'Terraform Action'
+        ok : 'Proceed'
+        parameters {
+                    string(name: 'action', defaultValue: '', description: 'Terraform action')
         }
+
+    }
+    stages {
+        //stage('input'){
+          //  steps{
+            //    script {
+              //   $action = input message: 'Please enter Terraform action',
+                //             parameters: [string(defaultValue: '',
+                  //                        description: 'This is Terraform Action',
+                    //                      name: 'action')]
+             //echo "Terraform action: $action"
+               // }
+            //}
+        //}
+        
         stage('GitClone') {
             steps {
                 git branch: 'main', url: 'https://github.com/abhitahaa/terraform_ansible_cicd.git'
@@ -34,6 +43,7 @@ pipeline {
         }
         stage('Terraform Action') {
             steps {
+                echo "Terraform $action"
                 sh label: '', script: 'terraform $action --auto-approve'
             }
         }
