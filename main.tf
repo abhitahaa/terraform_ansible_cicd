@@ -242,7 +242,7 @@ resource "aws_key_pair" "windows-key" {
   public_key = file(var.windows_key) #file location for
 }
 */
-
+/*
 resource "aws_instance" "jenkins_server" {
 
   ami           = "ami-04505e74c0741db8d"
