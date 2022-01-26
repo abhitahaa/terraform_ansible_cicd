@@ -41,7 +41,7 @@ pipeline {
           //  steps {
             //    sh label: '', script: 'terraform destroy --auto-approve'
             //}
-        }
+        //}
         
     }
 }
